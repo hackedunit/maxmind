@@ -19,7 +19,7 @@ module Maxmind
     def attributes_from_response
       hash_to_return = {}
       self.instance_variables.each do |var|
-        hash_to_return[var.gsub("@","")] = self.instance_variable_get(var)
+        hash_to_return[var.to_s.gsub("@","")] = self.instance_variable_get(var)
       end
       return hash_to_return
     end
